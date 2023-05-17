@@ -123,11 +123,11 @@ string res ="OldNinja";
 return res;
 }
 /************************************************************************************/
-YountNinja::YountNinja(const char* name , Point location  )//speed=14
+YoungNinja::YoungNinja(const char* name , Point location  )//speed=14
 :Ninja(name , location , 100 , 14){}
 
-string YountNinja:: print(){
-string res ="YountNinja";
+string YoungNinja:: print(){
+string res ="YoungNinja";
 return res;
 }
 

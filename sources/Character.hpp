@@ -71,12 +71,12 @@ private :
         // virtual ~Ninja() = default;
 };
 
-class YountNinja: public Ninja{
+class YoungNinja: public Ninja{
     // private :
     //     int speed;
     public:
      // constructors:
-    YountNinja( const char* name , Point location  );
+    YoungNinja( const char* name , Point location  );
         
         // void move(Character &anamy);
         // void slash(Character &anamy);
