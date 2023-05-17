@@ -16,10 +16,16 @@ namespace ariel{}
        // empty
         Point():x(0) , y(0){}
 
+        //getters, setters:
+        double getY();
+        double getX();
+        void setX(double num);
+        void setY(double num);
+
         //methods:
         double distance(Point other);
         void print();
-        Point moveTowards(Point source ,Point destination , double distance);
+        static Point moveTowards(Point source ,Point destination , double distance);
 
 
 
