@@ -10,12 +10,12 @@ namespace ariel{}
 
 class Team{
 // The transition to the characters will be according to cowboy first
-    private:
+   public:
     array <Character* , 10> warriors;
     
     Character *leader;
     // (the same but not tameplate): Character warriors [10];
-    public:
+    
     size_t size;
     //constructor
     Team(Character *leader);
@@ -27,29 +27,35 @@ class Team{
     }
 }
     //methods:
-        void add(Character *warr);
-        void attack(Team *anamyTeam);
+        virtual void add(Character *warr);
+        virtual void attack(Team *anamyTeam);
         int stillAlive();
-        void print();
+       virtual void print();
         /// @brief method to find the closest character to the leader in the team
         /// @return pointer to that character
-        Character* ClosestCharToLead();
+        virtual Character* ClosestCharToLead();
         /// @brief method to find the closest character to the leader of the team 
         // in the anamy team
-        /// @param AnamyTeam 
+        /// @param EnemyTeam 
         /// @return pointer to that character
-        Character* ClosestCharToLead(Team* AnamyTeam);
+        Character* ClosestCharToLead(Team* EnemyTeam);
         Character* getLeader(){
             return this->leader;
         }
 };
 
-class smartTeam : public Team{
-//The transition to the characters will be according to your choice
+class Team2 : public Team {
 public:
-
+    Team2(Character *leader) : Team(leader) {}
+    void  add(Character* some);
+    void print() ;
+    Character* ClosestCharToLead(Team* EnemyTeam) ;
+    void attack(Team *EnemyTeam) ;
 };
 
-class Team2 : public Team {
-    //The transition to the characters will be according to order of addition
+class SmartTeam : public Team {
+//The transition to the characters will be according to your choice
+SmartTeam(Character *leader): Team(leader){}
+void  add(Character* some);
+void attack(Team *EnemyTeam);
 };

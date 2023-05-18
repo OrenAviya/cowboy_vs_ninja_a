@@ -67,14 +67,19 @@ void Cowboy::setNumBullet(int number){
 }
 
 void Cowboy::shoot(Character *enemy){
-   enemy->hit(10);
+   if(enemy != this){
+    enemy->hit(10);
     this->num_of_bullet--;
+   }
+   else{
+    cout << "can't hit myself";
+   }  
 }
 bool Cowboy::hasboolets(){
     return this->num_of_bullet>0;
 }
 void Cowboy::reload(){
-    this->num_of_bullet +=6; 
+    this->num_of_bullet =6; 
 }
 
 
@@ -104,7 +109,8 @@ Ninja::Ninja(){}
 
  void Ninja::slash(Character *enemy){
     bool meter = this->distance(enemy) <= 1;
-    if (this->isAlive() && meter){
+
+    if (this->isAlive() && meter && enemy !=this){
         enemy->hit(40);
     }
 
