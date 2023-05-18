@@ -13,22 +13,17 @@ namespace ariel{}
 
 Team::Team (Character *leader){
     size=0;
-    // Initialize the array elements or perform any other necessary setup
     this->leader = leader;
-    this->add(leader);
+    this->add(leader); //size++
     }
     
   void Team::print()
 {
-    for (size_t i = 0; i < this->size; ++i) {
-        if(warriors[i]->getType() == 1)
-            cout << warriors.at(i)->print() << endl;
+    for (size_t i =0 ; i < this->size ; i++){
+        cout << warriors[i]->print() << " , ";
     }
-    for (size_t i = 0; i < this->size; ++i) {
-        if(warriors[i]->getType() == 2)
-            cout << warriors.at(i)->print() << endl;
-    }
-}  
+    cout<<"\n";
+ }  
 
 void Team:: add(Character *warr){
     /*here we will sort all the cowboys first then all ninjas */ 
